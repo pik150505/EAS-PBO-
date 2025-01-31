@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kasir Flask</title>
+</head>
+<body>
+    <h1>Aplikasi Kasir</h1>
+    <form action="/add" method="post">
+        <input type="text" name="name" placeholder="Nama Barang" required>
+        <input type="number" name="price" placeholder="Harga" required>
+        <button type="submit">Tambah</button>
+    </form>
+
+    <h2>Daftar Barang</h2>
+    <ul>
+        {% for item in items %}
+        <li>{{ item.name }} - Rp{{ item.price }}</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
